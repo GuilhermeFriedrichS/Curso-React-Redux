@@ -4,6 +4,7 @@ import Card from './components/layout/Card';
 import Aletorio from './components/basicos/Aletorio';
 import Primeiro from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
+import Familia from './components/basicos/Familia';
 import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aletorio'
 
@@ -12,6 +13,10 @@ export default () => (
         <h1>Fundamentos React</h1>
 
         <div className='Cards'>
+
+            <Card titulo='#05 - Exemplo de Card' color="#00C8F8">
+                <Familia sobrenome="Ferreira"/>
+            </Card>
 
             <Card titulo='#04 - Exemplo de Card' color="#FA6900">
                 <Aleatorio min={1} max={60} ></Aleatorio>
