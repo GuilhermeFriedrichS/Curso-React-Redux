@@ -21,9 +21,9 @@ export default () => (
 
             <Card titulo='#09 - Renderização Condicional' color="#982395">
                 <ParOuImpar numero={21}></ParOuImpar>
-                <UsuarioInfo usuario={{ nome: 'Fernando' }}></UsuarioInfo>
-                <UsuarioInfo usuario={{}}></UsuarioInfo>
-                <UsuarioInfo/>
+                <UsuarioInfo usuario={{ nome: 'Fernando' }}/>
+                {/* <UsuarioInfo usuario={{}}></UsuarioInfo>
+                <UsuarioInfo/> */}
             </Card>
 
             <Card titulo='#08 - Renderização Condicional' color="#982395">
