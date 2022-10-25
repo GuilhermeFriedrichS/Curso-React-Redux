@@ -9,12 +9,17 @@ import ListaAlunos from './components/repeticao/ListaAlunos';
 import FamiliaMembro from './components/basicos/FamiliaMembro';
 import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aletorio'
+import TabelaProdutos from './components/repeticao/TabelaProdutos';
 
 export default () => (
     <div className="App">
         <h1>Fundamentos React</h1>
 
         <div className='Cards'>
+
+            <Card titulo='#07 - Desafio Repetição' color="#3A9AD4">
+                <TabelaProdutos></TabelaProdutos>
+            </Card>
 
             <Card titulo='#06 - Repetição' color="#FF4C65">
                 <ListaAlunos></ListaAlunos>
