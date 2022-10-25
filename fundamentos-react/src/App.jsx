@@ -5,6 +5,7 @@ import Aletorio from './components/basicos/Aletorio';
 import Primeiro from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
 import Familia from './components/basicos/Familia';
+import FamiliaMembro from './components/basicos/FamiliaMembro';
 import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aletorio'
 
@@ -15,7 +16,11 @@ export default () => (
         <div className='Cards'>
 
             <Card titulo='#05 - Exemplo de Card' color="#00C8F8">
-                <Familia sobrenome="Ferreira"/>
+                <Familia sobrenome="Ferreira">
+                    <FamiliaMembro nome="Pedro"/>
+                    <FamiliaMembro nome="Ana"/>
+                    <FamiliaMembro nome="Gustavo"/>
+                </Familia>
             </Card>
 
             <Card titulo='#04 - Exemplo de Card' color="#FA6900">
