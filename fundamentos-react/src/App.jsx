@@ -11,12 +11,20 @@ import Fragmento from './components/basicos/Fragmento'
 import Aleatorio from './components/basicos/Aletorio'
 import TabelaProdutos from './components/repeticao/TabelaProdutos';
 import ParOuImpar from './components/condicional/ParOuImpar';
+import UsuarioInfo from './components/condicional/UsuarioInfo';
 
 export default () => (
     <div className="App">
         <h1>Fundamentos React</h1>
 
         <div className='Cards'>
+
+            <Card titulo='#09 - Renderização Condicional' color="#982395">
+                <ParOuImpar numero={21}></ParOuImpar>
+                <UsuarioInfo usuario={{ nome: 'Fernando' }}></UsuarioInfo>
+                <UsuarioInfo usuario={{}}></UsuarioInfo>
+                <UsuarioInfo/>
+            </Card>
 
             <Card titulo='#08 - Renderização Condicional' color="#982395">
                 <ParOuImpar numero={20}></ParOuImpar>
