@@ -6,7 +6,7 @@ import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
 
 const merge = function (s1, s2) {
-    return s1 + s2
+    return [...s1].map((e, i) => `${e}${s2[i] || ""}`).join("")
 }
 
 const UseRef = (props) => {
