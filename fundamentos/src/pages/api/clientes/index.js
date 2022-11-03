@@ -7,9 +7,10 @@ export default function handler(req, res){
 }
 
 function handleGet(req, res){
+    const codigo = req.query.codigo
     res.status(200).json({
         id: 3,
         nome: 'Maria',
-        idade: 33
+        emai: `Maria@gmail.com`
     })
 }
