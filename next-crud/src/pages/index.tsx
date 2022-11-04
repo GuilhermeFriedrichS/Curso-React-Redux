@@ -11,6 +11,14 @@ export default function Home() {
     new Client('Pedro', 31, '4'),
   ]
 
+  function clientSelect(client: Client){
+    console.log(client.name)
+  }
+
+  function clientDeleted(client: Client){
+    console.log(`Excluir... ${client.name}`)
+  }
+
   return (
     <div className={`
       flex justify-center items-center h-screen
@@ -18,7 +26,9 @@ export default function Home() {
       text-white
     `}>
       <Layout tittle="Cadastro Simples">
-        <Table clients={clients}></Table>
+        <Table clients={clients} 
+          clientSelect={clientSelect} 
+          clientDeleted={clientDeleted}></Table>
       </Layout>
     </div>
   )
