@@ -5,35 +5,39 @@ interface TableProps {
 }
 
 export default function TableProps(props: TableProps){
-    function rederizarCabecalho(){
+    function renderReder(){
         return(
             <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Idade</th>
+                <th className="text-left p-4">Código</th>
+                <th className="text-left p-4">Nome</th>
+                <th className="text-left p-4">Idade</th>
             </tr>
         )
     }
 
-    function rederizarDados(){
+    function renderData(){
         return props.clients?.map((cliente, i) => {
             return (
-                <tr key={cliente.id}>
-                    <td>{cliente.id}</td>
-                    <td>{cliente.name}</td>
-                    <td>{cliente.age}</td>
+                <tr key={cliente.id}
+                    className={`${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
+                    <td className="text-left p-4">{cliente.id}</td>
+                    <td className="text-left p-4">{cliente.name}</td>
+                    <td className="text-left p-4">{cliente.age}</td>
                 </tr>
             )
         })
     }
 
     return(
-        <table>
-            <thead>
-                {rederizarCabecalho()}
+        <table className="w-full rounded-xl overflow-hidden">
+            <thead className={`
+                text-gray-100
+                bg-gradient-to-r from-purple-500 to-purple-800
+            `}>
+                {renderReder()}
             </thead>
             <tbody>
-                {rederizarDados()}
+                {renderData()}
             </tbody>
         </table>
     )
