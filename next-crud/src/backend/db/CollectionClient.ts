@@ -38,7 +38,6 @@ export default class CollectionClient implements ClientRepository{
         return query.docs.map(doc => doc.data()) ?? []
     }
     private collection(){
-        console.log(firebase)
         return firebase
             .firestore().collection('clients')
             .withConverter(this.#converter)
