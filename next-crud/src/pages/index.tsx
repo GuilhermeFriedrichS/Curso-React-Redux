@@ -1,11 +1,15 @@
 import { useState } from "react";
+import CollectionClient from "../backend/db/CollectionClient";
 import Button from "../components/Button";
 import Form from "../components/Form";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Client from "../core/Client";
+import ClientRepository from "../core/ClientRepository";
 
 export default function Home() {
+
+  const repo: ClientRepository = new CollectionClient()
 
   const [client, setClient] = useState<Client>(Client.empty())
   const [visible, setVisible] = useState<'table' | 'form'>('table')
@@ -31,7 +35,7 @@ export default function Home() {
     setVisible('table')
   }
 
-  function newClient(client: Client){
+  function newClient(){
     setClient(Client.empty())
     setVisible('form')
   }
