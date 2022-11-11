@@ -13,7 +13,8 @@ export default class Todo extends Component {
         this.state = { description: '', list: [] }
 
         this.handleChange = this.handleChange.bind(this)
-        
+        this.handleSearch = this.handleSearch.bind(this)
+            
         this.handleAdd = this.handleAdd.bind(this)
         this.handleMaskAsDone = this.handleMaskAsDone.bind(this)
         this.handleMaskAsPending = this.handleMaskAsPending.bind(this)
@@ -26,9 +27,14 @@ export default class Todo extends Component {
         this.setState({...this.state, description: e.target.value})
     }
 
-    refresh(){
-        axios.get(`${URL}?sort=-createdAt`)
-            .then(resp => this.setState({...this.state, description: '', list: resp.data}))
+    refresh(description = ''){
+        const search = description ? `&description__regex=/${description}/` : ''
+        axios.get(`${URL}?sort=-createdAt${search}`)
+            .then(resp => this.setState({...this.state, description, list: resp.data}))
+    }
+
+    handleSearch() {
+        this.refresh(this.state.description)
     }
 
     handleAdd() {
@@ -39,17 +45,17 @@ export default class Todo extends Component {
     
     handleRemove(todo){
         axios.delete(`${URL}/${todo._id}`)
-            .then(resp=>(this.refresh()))
+            .then(resp=>(this.refresh(this.state.description)))
     }
 
     handleMaskAsDone(todo){
         axios.put(`${URL}/${todo._id}`, {...todo, done:true})
-            .then(resp=>(this.refresh()))
+            .then(resp=>(this.refresh(this.state.description)))
     }
 
     handleMaskAsPending(todo){
         axios.put(`${URL}/${todo._id}`, {...todo, done:false})
-            .then(resp=>(this.refresh()))
+            .then(resp=>(this.refresh(this.state.description)))
     }
 
     render() {
@@ -59,7 +65,8 @@ export default class Todo extends Component {
                 <TodoForm 
                     description={this.state.description}
                     handleChange={this.handleChange}
-                    handleAdd={this.handleAdd} />
+                    handleAdd={this.handleAdd}
+                    handleSearch={this.handleSearch} />
                 <TodoList 
                     list={this.state.list}
                     handleMaskAsDone={this.handleMaskAsDone}
