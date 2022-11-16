@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import Card from './Card'
 
-function Media (props) {
+function Avarege (props) {
     console.log(props)
     const {min, max} = props
     return (
@@ -25,4 +24,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(Media)
+export default connect(mapStateToProps)(Avarege)
