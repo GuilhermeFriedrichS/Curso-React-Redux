@@ -2,21 +2,22 @@ import './Interval.css'
 import React from 'react'
 import { connect } from 'react-redux'
 import Card from './Card'
-import { changeNumberMin } from '../store/actions/numbers'
+import { changeNumberMin, changeNumberMax } from '../store/actions/numbers'
 
 function Interval (props) {
     const {min, max} = props
-    props.changeMin(10000)
     return (
         <Card title="Intervalo de Números" red>
             <div className='Interval'>
                 <span>
                     <strong>Mínimo:</strong>
-                    <input type="number" value={min} readOnly/>
+                    <input type="number" value={min} 
+                        onChange={e => props.changeMin(+e.target.value)}/>
                 </span>
                 <span>
                     <strong>Máximo:</strong>
-                    <input type="number" value={max} readOnly/>
+                    <input type="number" value={max} 
+                        onChange={e => props.changeMax(+e.target.value)}/>
                 </span>
             </div>
         </Card>
@@ -30,10 +31,14 @@ function mapStateToProps(state){
     }
 }
 
-function mapActionCreatorToProps(dispatch) {
+function mapDispathToProps(dispatch) {
     return {
         changeMin(newNumber) {
             const action = changeNumberMin(newNumber)
+            dispatch(action)
+        },
+        changeMax(newNumber) {
+            const action = changeNumberMax(newNumber)
             dispatch(action)
         }
     }
@@ -41,5 +46,5 @@ function mapActionCreatorToProps(dispatch) {
 
 export default connect(
     mapStateToProps, 
-    mapActionCreatorToProps
+    mapDispathToProps
 )(Interval)
