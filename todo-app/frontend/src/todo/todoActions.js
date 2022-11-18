@@ -22,3 +22,17 @@ export const add = (description) => {
             .then(resp => dispath(search()))
     }
 }
+
+export const markAsDone = (todo) => {
+    return dispath => {
+        axios.put(`${URL}/${todo._id}`, { ...todo, done:true})
+            .then(resp => dispath(search()))
+    }
+}
+
+export const markAsPending = (todo) => {
+    return dispath => {
+        axios.put(`${URL}/${todo._id}`, { ...todo, done:false})
+            .then(resp => dispath(search()))
+    }
+}
