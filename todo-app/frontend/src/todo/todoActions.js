@@ -18,7 +18,7 @@ export const search = () => {
 export const add = (description) => {
     return dispath => {
         axios.post(URL, {description})
-            .then(resp => dispath({ type: 'TODO_ADDED', payload: resp.data}))
+            .then(resp => dispath(clear()))
             .then(resp => dispath(search()))
     }
 }
@@ -42,4 +42,8 @@ export const remove = (todo) => {
         axios.delete(`${URL}/${todo._id}`)
             .then(resp => dispath(search()))
     }
+}
+
+export const clear = (todo) => {
+    return { type: 'TODO_CLEAR'}
 }
