@@ -5,6 +5,7 @@ import ContentHeader from "../common/template/contentHeader"
 import Content from "../common/template/content"
 import ValueBox from "../common/widget/valueBox"
 import Row from "../common/layout/row"
+import Tabs from "../common/tab/tabs"
 
 const BASE_URL = 'http://localhost:3003/api'
 
