@@ -3,9 +3,11 @@ import ReactDom from 'react-dom'
 import { applyMiddleware, createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+
+
 import promise from 'redux-promise'
 
-import App from './main/app'
+import App from '../src/main/app'
 import reducers from './main/reducers'
 
 
