@@ -1,4 +1,18 @@
 body {
+<<<<<<< HEAD
     background-color: #444;
 }
 .
+=======
+  background-color: #444;
+  background-image: url(61127799dc171cad10011f99849ef561.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; }
+
+.botao {
+  background-color: #19B3E6;
+  color: #FFF;
+  font-size: 1.8em; }
+
+>>>>>>> d32b850 (Synchronizing projects)
