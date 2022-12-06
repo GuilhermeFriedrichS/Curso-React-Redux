@@ -1,5 +1,5 @@
 {
-    "user": [{
+    "users": [{
         "id": 1,
         "name": "Arthur Oliveira",
         "email": "Teste@teste.com"
