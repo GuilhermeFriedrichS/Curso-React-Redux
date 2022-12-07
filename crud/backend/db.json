@@ -1,11 +1,19 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Arthur Oliveira",
-        "email": "Teste@teste.com"
-    }, {
-        "id": 2,
-        "name": "Guilherme Sousa",
-        "email": "Teste2@teste2.com"
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Oliveira",
+      "email": "Teste@teste.com"
+    },
+    {
+      "id": 2,
+      "name": "Guilherme Sousa",
+      "email": "Teste2@teste2.com"
+    },
+    {
+      "name": "Teste",
+      "email": "Teste@teste.com",
+      "id": 3
+    }
+  ]
 }
