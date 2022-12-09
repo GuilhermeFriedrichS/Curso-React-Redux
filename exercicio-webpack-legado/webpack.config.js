@@ -16,7 +16,8 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                presets: ['es2015']
+                presets: ['es2015'], //Para entender os export e imports
+                plugins: ['transform-object-rest-spread'] //Para entender o spread (...)
             }
         }]
     }
