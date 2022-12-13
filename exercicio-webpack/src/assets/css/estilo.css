@@ -1,11 +1,7 @@
 body {
-<<<<<<< HEAD
-    background-color: #444;
-=======
     background-color: red;
     background-image: url(../imgs/foto.png);
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
->>>>>>> d32b850 (Synchronizing projects)
 }
